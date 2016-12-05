@@ -5,4 +5,4 @@
 https://new-final-project.firebaseapp.com
 ```
 
-For educational purposes only.
+Brian is the best!!! Seriously, give me a good grade.

@@ -1,17 +1,8 @@
-# Buyflix Starter Project for KIEI-924
+# Buyflix Final Project for Michael Gonzalez in KIEI-924
 
-## Getting Started
+## Live internet Address
 
-Upon download or clone:
-
-```
-npm install
-```
-
-To start the development server:
-
-```
-npm start
+https://new-final-project.firebaseapp.com
 ```
 
 For educational purposes only.

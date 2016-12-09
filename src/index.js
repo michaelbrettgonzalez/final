@@ -99,7 +99,6 @@ var SortBar = React.createClass({
             <NavBarItem view="latest" title="Latest Releases" currentView= {this.props.currentView} viewChanged={this.props.viewChanged} />
             <NavBarItem view="alpha" title="A-Z" currentView= {this.props.currentView} viewChanged={this.props.viewChanged} /> 
             <NavBarItem view="map" title="Where to Watch" currentView= {this.props.currentView} viewChanged={this.props.viewChanged} />
-            <li><a href="#" onClick={() => this.viewChanged('map')}>Where to Watch</a></li>
             <li className="nav-text pull-right">{this.props.movieCount} movies</li>
           </ul>
         </div>
@@ -214,6 +213,14 @@ var App = React.createClass({
       return (
         <div className="col-sm-12">
           <MovieList movies={movieData.sort(this.movieCompareByTitle)} movieClicked={this.movieClicked} />
+          {this.renderMovieDetails()}
+        </div>
+      )
+    }
+    if (this.state.currentView === 'latest') {
+      return (
+        <div className="col-sm-12">
+          <MovieList movies={movieData.sort(this.movieCompareByReleased)} movieClicked={this.movieClicked} />
           {this.renderMovieDetails()}
         </div>
       )

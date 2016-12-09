@@ -75,6 +75,16 @@ var Header = React.createClass({
       </div>
     )
   }
+
+})
+var NavBarItem = React.createClass({
+  render: function() {
+    return (
+      <li className={this.props.currentView === this.props.view ? "active" : ""}>
+        <a href="#" onClick={() => this.props.viewChanged(this.props.view)}>{this.props.title}</a>
+      </li>
+    )
+  }
 })
 
 var SortBar = React.createClass({
@@ -86,22 +96,14 @@ var SortBar = React.createClass({
       <div className="sort row">
         <div className="col-sm-12">
           <ul className="nav nav-pills">
-            <li className="active"><a href="#" onClick={() => this.viewChanged('latest')}>Latest Releases</a></li>
-            <li><a href="#" onClick={() => this.viewChanged('alpha')}>A-Z</a></li>
+            <NavBarItem view="latest" title="Latest Releases" currentView= {this.props.currentView} viewChanged={this.props.viewChanged} />
+            <NavBarItem view="alpha" title="A-Z" currentView= {this.props.currentView} viewChanged={this.props.viewChanged} /> 
+            <NavBarItem view="map" title="Where to Watch" currentView= {this.props.currentView} viewChanged={this.props.viewChanged} />
             <li><a href="#" onClick={() => this.viewChanged('map')}>Where to Watch</a></li>
             <li className="nav-text pull-right">{this.props.movieCount} movies</li>
           </ul>
         </div>
       </div>
-    )
-  }
-})
-var NavBarItem = React.createClass({
-  render: function() {
-    return (
-      <li className={this.props.currentView === this.props.view ? "active" : ""}>
-        <a href="#" onClick={() => this.props.viewChanged(this.props.view)}>{this.props.title}</a>
-      </li>
     )
   }
 })
